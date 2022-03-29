@@ -1,9 +1,14 @@
-import searchIcon from "../../assets/search.svg";
+import { Form } from "remix";
+import searchIcon from "../assets/search.svg";
 
 export default function Search() {
   return (
     <div className="my-5 ">
-      <form className="flex flex-row items-center justify-center">
+      <Form
+        reloadDocument
+        method="get"
+        className="flex flex-row items-center justify-center"
+      >
         <label htmlFor="title" className="font-bold mx-2">
           Search
           <input
@@ -20,7 +25,7 @@ export default function Search() {
         >
           <img src={searchIcon} alt="searchicon" />
         </button>
-      </form>
+      </Form>
     </div>
   );
 }

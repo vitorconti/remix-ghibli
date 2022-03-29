@@ -18,3 +18,14 @@ export async function getFilms(title?: string | null) {
         return err.message()
     }
 }
+
+
+export async function getFilmById(filmId:string) {
+    try {
+        const response = await fetch(`https://ghibliapi.herokuapp.com/films/${filmId}`)
+        const film : Film  = await response.json()
+        return film
+    } catch (error: any) {
+        return error.message
+    }
+}
