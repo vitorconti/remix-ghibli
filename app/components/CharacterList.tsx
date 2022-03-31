@@ -13,12 +13,14 @@ export default function CharacterList({ characters }: CharacterListProps) {
         {characters?.map((character) => (
           <li>
             <NavLink
+              prefetch="intent"
+              key={character.id}
               to={`characters/${character.id}`}
               className={({ isActive }) =>
-                `w-full hover:underline p-3 rounded border border-slate-400 inline-block ${
+                `w-full hover:underline p-3 rounded border border-slate-400 inline-block font-sans font-semibold text-lg ${
                   isActive
-                    ? "bg-slate-300 text-black font-bold border-2"
-                    : "text-blue-500 "
+                    ? "bg-gray-600 text-white font-bold border-2"
+                    : "text-white "
                 } `
               }
             >

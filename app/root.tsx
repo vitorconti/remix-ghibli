@@ -35,3 +35,20 @@ export default function App() {
     </html>
   );
 }
+
+export function ErrorBoundary({ error }: { error: unknown | any }) {
+  return (
+    <html>
+      <head>
+        <title>Oh no!</title>
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        {/* add the UI you want your users to see */}
+        {error.message}
+        <Scripts />
+      </body>
+    </html>
+  );
+}
