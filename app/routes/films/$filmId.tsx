@@ -52,8 +52,6 @@ export const loader: LoaderFunction = async ({ params }) => {
 
   const film = await getFilmById(params.filmId);
 
-  console.log("fetching film... -->", film.title);
-
   return film;
 };
 
